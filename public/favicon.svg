@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f1d3a"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="#243a61" stroke-width="1.5"/>
+  <!-- shield -->
+  <path d="M32 12 L48 18 V33 C48 43 41 50 32 53 C23 50 16 43 16 33 V18 Z"
+        fill="none" stroke="#37dbf0" stroke-width="3" stroke-linejoin="round"/>
+  <!-- monogram D -->
+  <path d="M27 25 H33 C37.4 25 40 28 40 32.5 C40 37 37.4 40 33 40 H27 Z"
+        fill="none" stroke="#37dbf0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
