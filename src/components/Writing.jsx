@@ -5,7 +5,7 @@ import { POSTS } from "../data";
 
 export default function Writing() {
   return (
-    <Section id="writing" index="04" eyebrow="Writing" title="Notes & articles">
+    <Section id="writing" index="05" eyebrow="Writing" title="Notes & articles">
       <div className="grid md:grid-cols-2 gap-5">
         {POSTS.map((p, i) => (
           <motion.a

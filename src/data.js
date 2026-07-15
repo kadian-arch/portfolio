@@ -57,6 +57,31 @@ export const SKILLS = [
   },
 ];
 
+export const CERTIFICATIONS = [
+  {
+    name: "Fortinet Certified Fundamentals (FCF) in Cybersecurity",
+    issuer: "Fortinet",
+    date: "July 2026",
+    valid: "Valid to July 2028",
+    credentialUrl: "https://training.fortinet.com/admin/tool/certificate/index.php",
+  },
+  {
+    name: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    date: "September 2025",
+  },
+  {
+    name: "Cybercrime Awareness Certification",
+    issuer: "",
+    date: "",
+  },
+  {
+    name: "Information Security Certification",
+    issuer: "",
+    date: "",
+  },
+];
+
 // Project screenshots are imported in the component from src/assets/screenshots
 export const BASTION = {
   title: "Bastion IDS",

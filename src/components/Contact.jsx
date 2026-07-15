@@ -12,7 +12,7 @@ const CHANNELS = [
 
 export default function Contact() {
   return (
-    <Section id="contact" index="05" eyebrow="Contact" title="Let's talk">
+    <Section id="contact" index="06" eyebrow="Contact" title="Let's talk">
       <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
         {/* Left: message */}
         <motion.div
