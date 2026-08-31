@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Network, Code2, BrainCircuit, Cloud } from "lucide-react";
+import { ShieldCheck, Network, Code2, BrainCircuit, Cloud, Boxes } from "lucide-react";
 import Section from "./Section";
 import { SKILLS } from "../data";
 
 const ICONS = {
   "Security": ShieldCheck,
   "Networking": Network,
-  "Cloud & AWS": Cloud,
+  "Cloud and AWS": Cloud,
   "Programming": Code2,
-  "AI / ML & Frameworks": BrainCircuit,
+  "AI and ML": BrainCircuit,
+  "Frameworks and Tools": Boxes,
 };
 
 export default function Skills() {
   return (
-    <Section id="skills" index="03" eyebrow="Toolbox" title="Skills & technologies">
+    <Section id="skills" index="03" eyebrow="Toolbox" title="Skills and technologies">
       <div className="grid sm:grid-cols-2 gap-5">
         {SKILLS.map((s, i) => {
           const Icon = ICONS[s.group] ?? ShieldCheck;

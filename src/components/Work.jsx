@@ -1,5 +1,6 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Download, Check } from "lucide-react";
+import { ExternalLink, Download, Check, X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 import { GitHubIcon } from "./BrandIcons";
 import Section from "./Section";
 import { BASTION, PROJECTS } from "../data";
@@ -19,16 +20,35 @@ const SHOTS = [
   { src: liveCapture,     label: "Live Packet Capture" },
   { src: threatIntel,     label: "Threat Intelligence" },
   { src: networkTopology, label: "Network Topology" },
-  { src: commandControl,  label: "Command & Control" },
+  { src: commandControl,  label: "Command and Control" },
   { src: dataIngest,      label: "Data Ingest" },
   { src: systemHealth,    label: "System Health" },
   { src: sysConfig,       label: "Configuration" },
 ];
 
 export default function Work() {
+  const [box, setBox] = useState(null); // null | { type: "image", i } | { type: "video" }
+
+  useEffect(() => {
+    if (!box) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") setBox(null);
+      if (box.type === "image" && e.key === "ArrowRight")
+        setBox((b) => ({ type: "image", i: (b.i + 1) % SHOTS.length }));
+      if (box.type === "image" && e.key === "ArrowLeft")
+        setBox((b) => ({ type: "image", i: (b.i - 1 + SHOTS.length) % SHOTS.length }));
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [box]);
+
   return (
     <Section id="work" index="02" eyebrow="Selected work" title="What I've built">
-      {/* Bastion — hero project */}
+      {/* Bastion, hero project */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -79,9 +99,14 @@ export default function Work() {
             </div>
           </div>
 
-          {/* Right: live demo video (contained so it stays crisp) */}
+          {/* Right: live demo video (click to enlarge) */}
           <div className="relative bg-base/40 p-6 lg:p-8 border-t lg:border-t-0 lg:border-l border-edge flex items-center">
-            <div className="relative w-full rounded-xl overflow-hidden border border-edge shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setBox({ type: "video" })}
+              aria-label="Enlarge demo video"
+              className="group relative w-full rounded-xl overflow-hidden border border-edge shadow-2xl cursor-zoom-in text-left"
+            >
               <video
                 src={demoVid}
                 autoPlay loop muted playsInline
@@ -92,31 +117,42 @@ export default function Work() {
                 <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                 Live demo
               </span>
-            </div>
+              <span className="absolute bottom-3 right-3 flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest
+                text-ink bg-base/80 backdrop-blur border border-edge rounded-full px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <Maximize2 size={11} /> Expand
+              </span>
+            </button>
           </div>
         </div>
 
-        {/* Full dashboard gallery — all eight pages */}
+        {/* Full dashboard gallery, all eight pages */}
         <div className="border-t border-edge bg-base/40 p-6 lg:p-8">
           <p className="idx-tag text-[11px] font-bold uppercase tracking-[0.3em] text-faint mb-4">
             Inside the dashboard
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {SHOTS.map((s, i) => (
-              <motion.figure
+              <motion.button
                 key={s.label}
+                type="button"
+                onClick={() => setBox({ type: "image", i })}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: (i % 4) * 0.06 }}
-                className="group overflow-hidden rounded-xl border border-edge"
+                className="group overflow-hidden rounded-xl border border-edge cursor-zoom-in text-left hover:border-accent/40 transition-colors"
               >
-                <img src={s.src} alt={s.label} loading="lazy"
-                  className="w-full h-full object-cover aspect-video group-hover:scale-105 transition-transform duration-500" />
+                <div className="relative overflow-hidden">
+                  <img src={s.src} alt={s.label} loading="lazy"
+                    className="w-full h-full object-cover aspect-video group-hover:scale-105 transition-transform duration-500" />
+                  <span className="absolute top-2 right-2 text-ink bg-base/80 backdrop-blur border border-edge rounded-md p-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Maximize2 size={12} />
+                  </span>
+                </div>
                 <figcaption className="text-[10px] font-bold text-faint px-2 py-1.5 bg-panel">
                   {s.label}
                 </figcaption>
-              </motion.figure>
+              </motion.button>
             ))}
           </div>
         </div>
@@ -146,9 +182,73 @@ export default function Work() {
                 </span>
               ))}
             </div>
+            {p.repo && (
+              <a href={p.repo} target="_blank" rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:underline">
+                <GitHubIcon size={13} /> Source code
+              </a>
+            )}
           </motion.div>
         ))}
       </div>
+
+      {box && (
+        <div
+          onClick={() => setBox(null)}
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-[100] bg-base/92 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8"
+        >
+          <button
+            type="button"
+            onClick={() => setBox(null)}
+            aria-label="Close"
+            className="absolute top-4 right-4 text-ink bg-base/70 border border-edge rounded-full p-2 hover:border-accent/50 transition-colors"
+          >
+            <X size={18} />
+          </button>
+
+          {box.type === "image" ? (
+            <>
+              <button
+                type="button"
+                aria-label="Previous"
+                onClick={(e) => { e.stopPropagation(); setBox((b) => ({ type: "image", i: (b.i - 1 + SHOTS.length) % SHOTS.length })); }}
+                className="absolute left-3 sm:left-6 text-ink bg-base/70 border border-edge rounded-full p-2 hover:border-accent/50 transition-colors"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <figure onClick={(e) => e.stopPropagation()} className="max-w-[92vw]">
+                <img
+                  src={SHOTS[box.i].src}
+                  alt={SHOTS[box.i].label}
+                  className="max-h-[82vh] max-w-[92vw] w-auto rounded-xl border border-edge shadow-2xl"
+                />
+                <figcaption className="text-center text-[12px] font-bold text-muted mt-3">
+                  {SHOTS[box.i].label}
+                </figcaption>
+              </figure>
+
+              <button
+                type="button"
+                aria-label="Next"
+                onClick={(e) => { e.stopPropagation(); setBox((b) => ({ type: "image", i: (b.i + 1) % SHOTS.length })); }}
+                className="absolute right-3 sm:right-6 text-ink bg-base/70 border border-edge rounded-full p-2 hover:border-accent/50 transition-colors"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </>
+          ) : (
+            <video
+              src={demoVid}
+              autoPlay loop muted controls playsInline
+              onClick={(e) => e.stopPropagation()}
+              className="max-h-[85vh] max-w-[92vw] w-auto rounded-xl border border-edge shadow-2xl"
+            />
+          )}
+        </div>
+      )}
     </Section>
   );
 }

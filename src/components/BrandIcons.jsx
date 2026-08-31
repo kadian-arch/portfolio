@@ -1,4 +1,4 @@
-// Inline brand icons — lucide-react dropped these for trademark reasons.
+// Inline brand icons (lucide-react dropped these for trademark reasons).
 export function GitHubIcon({ size = 18, className = "" }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"

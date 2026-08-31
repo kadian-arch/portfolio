@@ -34,8 +34,8 @@ export default function Hero() {
         {/* Left: copy */}
         <div>
           <motion.p variants={fade} initial="hidden" animate="show" custom={0}
-            className="eyebrow mb-5 flex items-center gap-2">
-            <span className="inline-block w-8 h-px bg-accent" /> {PROFILE.role}
+            className="eyebrow mb-5">
+            {PROFILE.role}
           </motion.p>
 
           <motion.h1 variants={fade} initial="hidden" animate="show" custom={1}
@@ -46,17 +46,6 @@ export default function Hero() {
           <motion.p variants={fade} initial="hidden" animate="show" custom={2}
             className="mt-5 text-lg sm:text-xl text-muted max-w-xl leading-relaxed">
             {PROFILE.pitch}
-          </motion.p>
-
-          {/* Console-style identity line — the site's signature detail */}
-          <motion.p variants={fade} initial="hidden" animate="show" custom={2.5}
-            className="mt-5 font-mono text-[12px] text-faint flex flex-wrap items-center gap-x-2 gap-y-1">
-            <span className="text-accent">&gt;</span>
-            <span>status:</span><span className="text-emerald-400">operational</span>
-            <span className="text-edge">|</span>
-            <span>role:</span><span className="text-muted">network_defense</span>
-            <span className="text-edge">|</span>
-            <span>loc:</span><span className="text-muted">buea_cm</span>
           </motion.p>
 
           <motion.div variants={fade} initial="hidden" animate="show" custom={3}

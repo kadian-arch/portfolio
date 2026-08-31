@@ -22,3 +22,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Bot training data (private, must not be published to the public repo)
+chatbot/
+
+# Resume working backups (private, must not be published)
+resume_backups/
+
+# Resume folder: publish ONLY the downloadable PDF, nothing else (not the .docx)
+public/resume/*
+!public/resume/Kum_Donalsien_Akwo_Resume.pdf

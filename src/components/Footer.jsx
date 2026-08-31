@@ -30,7 +30,7 @@ export default function Footer() {
 
       <div className="container-x pb-8 text-center sm:text-left">
         <p className="text-[12px] text-faint">
-          &copy; {year} {PROFILE.name}. Built with React and Tailwind.
+          &copy; {year} {PROFILE.name}.
         </p>
       </div>
     </footer>

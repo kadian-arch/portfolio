@@ -5,7 +5,7 @@ import { CERTIFICATIONS } from "../data";
 
 export default function Certifications() {
   return (
-    <Section id="certifications" index="04" eyebrow="Certifications" title="Certifications & badges">
+    <Section id="certifications" index="04" eyebrow="Certifications" title="Certifications and badges">
       <div className="grid sm:grid-cols-2 gap-5">
         {CERTIFICATIONS.map((c, i) => (
           <motion.div

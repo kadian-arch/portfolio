@@ -20,7 +20,6 @@ export default function Section({ id, index, eyebrow, title, children, className
                 {index && (
                   <span className="idx-tag text-[12px] font-bold text-accent">{index}</span>
                 )}
-                <span className="h-px w-8 bg-accent/50" />
                 {eyebrow && (
                   <span className="idx-tag text-[11px] font-bold uppercase tracking-[0.3em] text-faint">
                     {eyebrow}
