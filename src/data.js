@@ -159,8 +159,8 @@ export const POSTS = [
   },
   {
     title: "Bastion IDS: Layer Contribution, Threshold Sensitivity, and Consensus Rule Design in a Deployed Hybrid Intrusion Detection System",
-    blurb: "A co-authored research paper that measures how much each detection layer of Bastion contributes, how sensitive it is to its alert thresholds, and how the consensus rule that fuses the layers is designed. Submitted to the Journal of Information Security and Applications (Elsevier).",
-    date: "In review",
+    blurb: "A co-authored research paper that measures how much each detection layer of Bastion contributes, how sensitive it is to its alert thresholds, and how the consensus rule that fuses the layers is designed. Being prepared for submission to a peer-reviewed journal.",
+    date: "In progress",
     tag: "Article",
     href: "",
   },
