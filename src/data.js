@@ -67,7 +67,9 @@ export const CERTIFICATIONS = [
   {
     name: "Certified in Cybersecurity (CC)",
     issuer: "ISC2",
-    date: "Exam passed, August 2026",
+    date: "September 2026",
+    valid: "Valid to September 2029",
+    credentialUrl: "https://www.credly.com/badges/2da8f89c-4f8d-4e8d-8e5f-ae1491271bfc/public_url",
   },
   {
     name: "Fortinet Certified Fundamentals (FCF) in Cybersecurity",
