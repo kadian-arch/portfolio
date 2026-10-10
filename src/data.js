@@ -123,6 +123,17 @@ export const BASTION = {
 // Secondary projects from the résumé
 export const PROJECTS = [
   {
+    title: "Stop Arnaque 237",
+    year: "2026",
+    desc: "An open dataset of scams in Cameroon, collected from the people who receive them. Real scam messages, calls and schemes sit next to the genuine MTN and Orange messages they copy, in English, French and Pidgin, all anonymized and labelled so detection tools can learn to tell them apart.",
+    tags: ["Open Data", "Scam Detection", "Privacy", "Python", "Dataset"],
+    repo: "https://github.com/kadian-arch/stop-arnaque-237",
+    links: [
+      { label: "Dataset DOI (Zenodo)", href: "https://doi.org/10.5281/zenodo.23287617" },
+      { label: "Hugging Face", href: "https://huggingface.co/datasets/kadian-arch/stop-arnaque-237" },
+    ],
+  },
+  {
     title: "FairGlass",
     year: "2026",
     desc: "Proof of fair AI hiring, built on the Midnight blockchain. A Compact smart contract cryptographically proves that each hiring decision followed an agreed fairness policy: it issues a receipt when the rules hold, and refuses one when a forbidden attribute like age changes the outcome, all without exposing any candidate data.",

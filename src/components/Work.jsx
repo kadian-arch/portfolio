@@ -188,6 +188,12 @@ export default function Work() {
                 <GitHubIcon size={13} /> Source code
               </a>
             )}
+            {p.links?.map((l) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noreferrer"
+                className="mt-1.5 inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:underline">
+                {l.label} ↗
+              </a>
+            ))}
           </motion.div>
         ))}
       </div>
