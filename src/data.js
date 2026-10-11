@@ -53,8 +53,8 @@ export const SKILLS = [
   },
   {
     group: "AI and ML",
-    items: ["scikit-learn", "Keras / TensorFlow", "Random Forest", "XGBoost", "CatBoost",
-            "Isolation Forest", "Autoencoders", "Deep Neural Networks"],
+    items: ["scikit-learn", "Keras / TensorFlow", "pandas", "Random Forest", "XGBoost", "CatBoost",
+            "Isolation Forest", "Autoencoders", "Deep Neural Networks", "LLM Evaluation"],
   },
   {
     group: "Frameworks and Tools",
