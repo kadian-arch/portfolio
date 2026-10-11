@@ -134,6 +134,17 @@ export const PROJECTS = [
     ],
   },
   {
+    title: "Does the Answer Survive Disagreement",
+    year: "2026",
+    desc: "An open benchmark that measures whether a language model keeps a correct answer when a user pushes back or asserts a wrong one. A 112-question, four-arm design with a control arm that separates caving from genuinely updating on evidence, graded deterministically with no LLM judge. Run across 12 models from six labs on Kaggle Benchmarks.",
+    tags: ["LLM Evaluation", "Benchmark", "Python", "pandas", "Kaggle"],
+    repo: "https://github.com/kadian-arch/answer-survives-disagreement",
+    links: [
+      { label: "Kaggle Benchmark", href: "https://www.kaggle.com/benchmarks/kumdonalsien/does-the-answer-survive-disagreement" },
+      { label: "Write-up (DEV)", href: "https://dev.to/kum_donalsien_kadian/models-shrug-off-are-you-sure-they-fold-when-you-assert-a-wrong-answer-i8d" },
+    ],
+  },
+  {
     title: "FairGlass",
     year: "2026",
     desc: "Proof of fair AI hiring, built on the Midnight blockchain. A Compact smart contract cryptographically proves that each hiring decision followed an agreed fairness policy: it issues a receipt when the rules hold, and refuses one when a forbidden attribute like age changes the outcome, all without exposing any candidate data.",
@@ -156,6 +167,13 @@ export const PROJECTS = [
 
 // Blog / writing. Add entries here as you publish.
 export const POSTS = [
+  {
+    title: "Models shrug off \"Are you sure?\" They fold when you assert a wrong answer.",
+    blurb: "An open benchmark across 12 models from six labs, testing whether a model holds a correct answer under pushback. \"Are you sure?\" is resisted about 94% of the time, but a confident wrong answer asserted twice only about 84%. Model size turned out to be a weak predictor, with generation and training recipe mattering more. Published for the Kaggle Benchmarking Challenge.",
+    date: "2026",
+    tag: "Article",
+    href: "https://dev.to/kum_donalsien_kadian/models-shrug-off-are-you-sure-they-fold-when-you-assert-a-wrong-answer-i8d",
+  },
   {
     title: "Building Bastion IDS: a four-layer intrusion detection system from scratch",
     blurb: "How I combined signatures, machine learning, deep learning, and anomaly detection into one real-time platform, and what I learned shipping it as a real desktop app.",
