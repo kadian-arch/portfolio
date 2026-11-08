@@ -123,6 +123,41 @@ export const BASTION = {
 // Secondary projects from the résumé
 export const PROJECTS = [
   {
+    title: "Stillwatch",
+    year: "2026",
+    desc: "Watches for the silence. Every home monitoring product tells you when something happens; for somebody living alone the dangerous thing is when nothing does. Stillwatch tells somebody who left the house from somebody who stopped moving in it, by classifying each camera as a way out or an interior room and reading the sequence rather than a threshold. It learns each household's own rhythm hour by hour, says why in a sentence every time and never requests or stores video. Live, watched from outside its own deployment so that a service which has quietly died raises an alarm instead of looking like a quiet house.",
+    tags: ["Python", "Flask", "Ring Partner API", "AWS", "Apache-2.0", "Live"],
+    repo: "https://github.com/kadian-arch/stillwatch",
+    links: [
+      { label: "Live site", href: "https://stillwatch.tech" },
+      { label: "Demo video", href: "https://youtu.be/zqYAX_-DnUM" },
+    ],
+  },
+  {
+    title: "ring-event-simulator",
+    year: "2026",
+    desc: "A standalone generator of realistic multi-week household event streams in Ring's own shape, so inactivity detection can be built and tested without a house, a camera or API access. No dependencies, deterministic from a seed, with its own test suite, CI and changelog. Published separately from Stillwatch because the problem it solves belongs to anyone building on the Ring API without hardware.",
+    tags: ["Python", "Open Source", "Testing", "Synthetic Data", "MIT"],
+    repo: "https://github.com/kadian-arch/ring-event-simulator",
+  },
+  {
+    title: "CheckAm",
+    year: "2026",
+    desc: "A live service where ordinary people paste a suspicious message and find out whether it is a scam, built on top of the Stop Arnaque 237 dataset. Fraud analysts see past the single message to the wider campaign behind it. Evaluated on a blind set rather than on the data it learned from. The blind numbers are the ones published.",
+    tags: ["Python", "Scam Detection", "AI Agents", "Apache-2.0"],
+    repo: "https://github.com/kadian-arch/checkam",
+    links: [
+      { label: "Demo video", href: "https://youtu.be/NXwt8Oa5RRY" },
+    ],
+  },
+  {
+    title: "Countersign",
+    year: "2026",
+    desc: "A guard for AI agents that move money. It checks what an autonomous agent is about to do against the merchant's own rules before the payment leaves, refuses anything outside them and explains the refusal in plain words rather than returning an error code.",
+    tags: ["Python", "AI Agents", "Payments", "Apache-2.0"],
+    repo: "https://github.com/kadian-arch/countersign",
+  },
+  {
     title: "Stop Arnaque 237",
     year: "2026",
     desc: "An open dataset of scams in Cameroon, collected from the people who receive them. Real scam messages, calls and schemes sit next to the genuine MTN and Orange messages they copy, in English, French and Pidgin, all anonymized and labelled so detection tools can learn to tell them apart.",
