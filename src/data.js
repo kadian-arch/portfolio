@@ -144,18 +144,23 @@ export const PROJECTS = [
     title: "CheckAm",
     year: "2026",
     desc: "A live service where ordinary people paste a suspicious message and find out whether it is a scam, built on top of the Stop Arnaque 237 dataset. Fraud analysts see past the single message to the wider campaign behind it. Evaluated on a blind set rather than on the data it learned from. The blind numbers are the ones published.",
-    tags: ["Python", "Scam Detection", "AI Agents", "Apache-2.0"],
+    tags: ["Python", "React PWA", "Scam Detection", "AI Agents", "Apache-2.0"],
     repo: "https://github.com/kadian-arch/checkam",
     links: [
+      { label: "Live site", href: "https://checkam.me" },
+      { label: "Telegram bot", href: "https://t.me/checkam_bot" },
       { label: "Demo video", href: "https://youtu.be/NXwt8Oa5RRY" },
     ],
   },
   {
     title: "Countersign",
     year: "2026",
-    desc: "A guard for AI agents that move money. It checks what an autonomous agent is about to do against the merchant's own rules before the payment leaves, refuses anything outside them and explains the refusal in plain words rather than returning an error code.",
-    tags: ["Python", "AI Agents", "Payments", "Apache-2.0"],
+    desc: "Payment guardrails for AI agents. Countersign sits between an AI shopping assistant and a shop's PayPal account, so a stranger's email cannot talk the agent into moving money. Every refund or payout the agent proposes is checked against the shop's own rules before it leaves, and a refusal is explained in plain words rather than returned as an error code. Built for the PayPal AI Hackathon on the PayPal REST sandbox.",
+    tags: ["Python", "AI Agents", "Payments", "Prompt Injection", "Apache-2.0"],
     repo: "https://github.com/kadian-arch/countersign",
+    links: [
+      { label: "Live demo", href: "https://countersign-l6fh.onrender.com" },
+    ],
   },
   {
     title: "Stop Arnaque 237",
